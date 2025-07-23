@@ -1,0 +1,9 @@
+html, body {
+    font-family: system-ui, sans-serif;
+    background-color: #0f172a;
+    color: #f1f5f9;
+  }
+  ::selection {
+    background: #3b82f6;
+    color: #fff;
+  }
