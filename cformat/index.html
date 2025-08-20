@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>C printf() Formatters Cheat Sheet</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>C <code>printf</code> Formatters — Quick Reference</h1>
+  <p class="lead">A single-page cheat sheet showing the common format specifiers, length modifiers, flags, width/precision, and examples for <code>printf()</code> in C and C++. (Now includes an interactive simulator!)</p>
+
+  <h2>Reference Table</h2>
+  <table>
+    <thead>
+      <tr><th>Specifier</th><th>Meaning</th><th>Example</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>%d / %i</td><td>Signed decimal integer</td><td><code>printf("%d", 42);</code></td></tr>
+      <tr><td>%u</td><td>Unsigned decimal integer</td><td><code>printf("%u", 42);</code></td></tr>
+      <tr><td>%o</td><td>Unsigned octal</td><td><code>printf("%o", 42);</code></td></tr>
+      <tr><td>%x / %X</td><td>Unsigned hexadecimal (lower/upper)</td><td><code>printf("%x", 42);</code></td></tr>
+      <tr><td>%f / %F</td><td>Decimal floating point</td><td><code>printf("%.2f", 3.14);</code></td></tr>
+      <tr><td>%e / %E</td><td>Scientific notation</td><td><code>printf("%e", 3.14);</code></td></tr>
+      <tr><td>%g / %G</td><td>Shortest of %e or %f</td><td><code>printf("%g", 3.14);</code></td></tr>
+      <tr><td>%a / %A</td><td>Hexadecimal floating point</td><td><code>printf("%a", 3.14);</code></td></tr>
+      <tr><td>%c</td><td>Character</td><td><code>printf("%c", 'A');</code></td></tr>
+      <tr><td>%s</td><td>String</td><td><code>printf("%s", "Hello");</code></td></tr>
+      <tr><td>%p</td><td>Pointer</td><td><code>printf("%p", ptr);</code></td></tr>
+      <tr><td>%n</td><td>Number of characters so far (writes to int*)</td><td><code>printf("%n", &x);</code></td></tr>
+      <tr><td>%%</td><td>Literal percent sign</td><td><code>printf("%%");</code></td></tr>
+    </tbody>
+  </table>
+
+  <h2>Interactive "What does this print?" Simulator</h2>
+  <div id="simulator">
+    <label for="sim-format">Format string:</label>
+    <input type="text" id="sim-format" value="Value: %d" />
+
+    <label for="sim-value">Value:</label>
+    <input type="text" id="sim-value" value="42" />
+
+    <label for="sim-type">Type:</label>
+    <select id="sim-type">
+      <option value="int">int</option>
+      <option value="unsigned">unsigned int</option>
+      <option value="double">double</option>
+      <option value="string">string</option>
+      <option value="char">char</option>
+    </select>
+
+    <button id="run-sim">Run Simulation</button>
+    <div id="sim-output">Output will appear here</div>
+  </div>
+  <footer>
+    <small>Tip: This simulator emulates output using JavaScript rules similar to printf, but for exact behavior, test in a real C compiler.</small>
+  </footer>
+  <script src="index.js"></script>
+</body>
+</html>
