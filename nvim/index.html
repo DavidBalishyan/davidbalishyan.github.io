@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="en" class="dark">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>My Neovim Config - DavidBalishyan</title>
+  <meta name="description" content="My Neovim configuration — fast, minimal, and configured with lazy.nvim. Clone and get started." />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            accent: '#0b5cff'
+          }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="bg-white text-black dark:bg-neutral-900 dark:text-neutral-100">
+  <main class="max-w-3xl mx-auto px-4 py-12">
+    <header class="mb-8">
+      <h1 class="text-3xl font-bold">My Neovim Config</h1>
+      <p class="text-neutral-500 dark:text-neutral-400 mt-2">A fast, minimal, and highly-customizable Neovim setup (built with Lua &amp; <code class="bg-neutral-800 text-neutral-200 px-1 rounded">lazy.nvim</code>).</p>
+    </header>
+
+    <nav class="flex flex-wrap justify-center gap-4 mb-10 text-sm">
+      <a href="#features" class="hover:underline">Features</a>
+      <a href="#installation" class="hover:underline">Installation</a>
+      <a href="#plugins" class="hover:underline">Key Plugins</a>
+      <a href="#config" class="hover:underline">Config</a>
+      <a href="#screenshots" class="hover:underline">Screenshots</a>
+      <a href="#contact" class="hover:underline">Contact</a>
+    </nav>
+
+    <section id="features" class="mb-10">
+      <h2 class="text-xl font-semibold mb-3">Features</h2>
+      <ul class="list-disc pl-5 space-y-2">
+        <li>Plugin management with <code class="bg-neutral-800 text-neutral-200 px-1 rounded">lazy.nvim</code> for fast startup and lazy-loading.</li>
+        <li>Modern editing UX: LSP, autocompletion (nvim-cmp), snippets (LuaSnip).</li>
+        <li>Tree-sitter powered syntax highlighting.</li>
+        <li>Fuzzy finding and file navigation (Telescope).</li>
+        <li>Small, ergonomic keymaps and sensible defaults.</li>
+      </ul>
+    </section>
+
+    <section id="installation" class="mb-10">
+      <h2 class="text-xl font-semibold mb-3">Installation</h2>
+      <ol class="list-decimal pl-5 space-y-2">
+        <li class="text-neutral-500 dark:text-neutral-400">(Optional) Backup your existing config:
+          <pre class="bg-neutral-800 text-neutral-200 p-3 rounded mt-2 overflow-auto">mv ~/.config/nvim ~/.config/nvim.bak</pre>
+        </li>
+        <li>Clone the repo:
+          <pre class="bg-neutral-800 text-neutral-200 p-3 rounded mt-2 overflow-auto">git clone https://github.com/DavidBalishyan/nvim.git ~/.config/nvim</pre>
+        </li>
+        <li>Start Neovim. On first run <code class="bg-neutral-800 text-neutral-200 px-1 rounded">lazy.nvim</code> will automatically install plugins:
+          <pre class="bg-neutral-800 text-neutral-200 p-3 rounded mt-2 overflow-auto">nvim</pre>
+        </li>
+      </ol>
+      <p class="text-neutral-500 dark:text-neutral-400 mt-3">Some LSPs or external tools may need to be installed separately (e.g. <code class="bg-neutral-800 text-neutral-200 px-1 rounded">rust-analyzer</code>, <code class="bg-neutral-800 text-neutral-200 px-1 rounded">gopls</code>, <code class="bg-neutral-800 text-neutral-200 px-1 rounded">pyright</code>).</p>
+    </section>
+
+    <section id="plugins" class="mb-10">
+      <h2 class="text-xl font-semibold mb-3">Key Plugins</h2>
+      <div class="grid md:grid-cols-2 gap-5">
+        <div class="border border-neutral-800 rounded-lg p-4">
+          <h3 class="font-semibold">Plugin manager</h3>
+          <p class="text-neutral-500 dark:text-neutral-400">lazy.nvim — fast startup and on-demand loading.</p>
+        </div>
+        <div class="border border-neutral-800 rounded-lg p-4">
+          <h3 class="font-semibold">UX &amp; UI</h3>
+          <p class="text-neutral-500 dark:text-neutral-400">noice.nvim, lualine, telescope, oil.nvim</p>
+        </div>
+        <div class="border border-neutral-800 rounded-lg p-4">
+          <h3 class="font-semibold">Editing helpers</h3>
+          <p class="text-neutral-500 dark:text-neutral-400">nvim-cmp, LuaSnip, nvim-autopairs, nvim-surround</p>
+        </div>
+        <div class="border border-neutral-800 rounded-lg p-4">
+          <h3 class="font-semibold">LSP &amp; Syntax</h3>
+          <p class="text-neutral-500 dark:text-neutral-400">nvim-lspconfig, treesitter</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="config" class="mb-10">
+      <h2 class="text-xl font-semibold mb-3">Config snippets</h2>
+      <h3 class="font-medium">init.lua</h3>
+      <pre class="bg-neutral-800 text-neutral-200 p-3 rounded mt-2 overflow-auto">-- main entry: ~/.config/nvim/init.lua
+require("lazy").setup("lua/plugins")
+require("options")
+require("keymaps")</pre>
+
+      <h3 class="font-medium mt-6">example keymap</h3>
+      <pre class="bg-neutral-800 text-neutral-200 p-3 rounded mt-2 overflow-auto">-- save with Ctrl+s
+vim.api.nvim_set_keymap('n', '<C-s>', ':w<CR>', { noremap = true, silent = true })</pre>
+
+      <h3 class="font-medium mt-6">example plugin spec</h3>
+      <pre class="bg-neutral-800 text-neutral-200 p-3 rounded mt-2 overflow-auto">{
+  "nvim-treesitter/nvim-treesitter",
+  build = ":TSUpdate",
+  lazy = false,
+}</pre>
+    </section>
+
+    <section id="screenshots" class="mb-10">
+      <h2 class="text-xl font-semibold mb-3">Screenshots</h2>
+      <div class="grid md:grid-cols-2 gap-5">
+        <img class="rounded-lg border border-neutral-800" alt="screenshot 1" src="https://raw.githubusercontent.com/DavidBalishyan/nvim/main/screenshots/1.png" onerror="this.style.display='none'" />
+        <img class="rounded-lg border border-neutral-800" alt="screenshot 2" src="https://raw.githubusercontent.com/DavidBalishyan/nvim/main/screenshots/2.png" onerror="this.style.display='none'" />
+      </div>
+    </section>
+
+    <section id="contact" class="mb-10">
+      <h2 class="text-xl font-semibold mb-3">Contact &amp; Source</h2>
+      <p>View the full configuration and source on GitHub:</p>
+      <a class="inline-block mt-3 px-4 py-2 rounded border border-accent text-accent font-semibold hover:bg-accent hover:text-white transition" href="https://github.com/DavidBalishyan/nvim" target="_blank" rel="noopener">Open repo on GitHub</a>
+      <p class="text-neutral-500 dark:text-neutral-400 mt-4">License: MIT</p>
+    </section>
+
+    <footer class="text-center text-neutral-500 dark:text-neutral-400 text-sm mt-12">
+      © 2025 David Balishyan - Neovim config
+    </footer>
+  </main>
+
+  <script>
+    // Smooth scrolling for nav links
+    document.querySelectorAll('nav a[href^="#"]').forEach(a=>{
+      a.addEventListener('click',e=>{
+        e.preventDefault();
+        document.querySelector(a.getAttribute('href')).scrollIntoView({behavior:'smooth'});
+      })
+    })
+  </script>
+</body>
+</html>
