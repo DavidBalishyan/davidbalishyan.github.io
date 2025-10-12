@@ -1,0 +1,1 @@
+window.location.href = "https://markdown-previewer-rust-1.onrender.com";
