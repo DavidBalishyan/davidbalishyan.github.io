@@ -9,3 +9,5 @@ This is my github pages root, i have some useful stuff here with raw HTML/CSS/JS
 [davidbalishyan.github.io/nvim](https://davidbalishyan.github.io/nvim)
 <br/>
 [davidbalishyan.github.io/md.rs](https://davidbalishyan.github.io/md.rs)
+<br/>
+[davidbalishyan.github.io/player](https://davidbalishyan.github.io/player)
