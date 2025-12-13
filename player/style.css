@@ -1,0 +1,81 @@
+* {
+  box-sizing: border-box;
+  font-family: system-ui, sans-serif;
+  overflow: hidden;
+}
+
+body {
+  background: linear-gradient(135deg, #0f172a, #020617);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  color: white;
+}
+
+.player {
+  width: 360px;
+  background: #020617;
+  border-radius: 16px;
+  padding: 20px;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.6);
+}
+
+h2 {
+  text-align: center;
+  font-size: 16px;
+  margin-bottom: 12px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.media-container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 12px;
+}
+
+video {
+  width: 100%;
+  border-radius: 12px;
+  display: none;
+}
+
+input[type="range"] {
+  width: 100%;
+  margin: 10px 0;
+  cursor: pointer;
+}
+
+.controls {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+button {
+  background: #2563eb;
+  border: none;
+  color: white;
+  font-size: 18px;
+  padding: 10px 14px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #1d4ed8;
+}
+
+.file-btn {
+  background: #334155;
+  padding: 8px 12px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.file-btn input {
+  display: none;
+}

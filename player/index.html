@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Media Player</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<div class="player">
+  <h2 id="title">No media loaded</h2>
+
+  <div class="media-container">
+    <audio id="audio"></audio>
+    <video id="video"></video>
+  </div>
+
+  <input type="range" id="progress" value="0">
+
+  <div class="controls">
+    <button id="play">▶</button>
+    <input type="range" id="volume" min="0" max="1" step="0.01" value="1">
+    <label class="file-btn">
+      📂 Load
+      <input type="file" id="file" accept="audio/*,video/*">
+    </label>
+  </div>
+</div>
+
+<script src="index.js"></script>
+</body>
+</html>
