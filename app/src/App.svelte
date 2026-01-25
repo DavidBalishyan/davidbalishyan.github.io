@@ -15,17 +15,37 @@
       ],
     },
     {
+      name: "My personal blog",
+      description:
+        "A blog about my experiences and thoughts.",
+      links: [
+        { label: "GitHub", url: "https://github.com/davidbalishyan/blog" },
+        { label: "Website", url: "https://davidbalishyan.github.io/blog" },
+        { label: "Blog post", url: "https://davidbalishyan.github.io/blog/introduction/jekyll/2026/01/18/hi-jekyll.html" },
+      ],
+    },
+    {
       name: "Portfolio",
       description:
         "A clean, Gruvbox-themed personal homepage built with Svelte and Vite.",
       links: [
         {
-          label: "Source",
+          label: "GitHub",
           url: "https://github.com/davidbalishyan/davidbalishyan.github.io",
         },
         { label: "Live", url: "https://davidbalishyan.github.io" },
       ],
     },
+ 
+    {
+      name: "Betterfetch",
+      description:
+        "A ligthweight and fast way to fetch and display information about your system.",
+      links: [
+        { label: "GitHub", url: "https://github.com/betterfetch/betterfetch" },
+        { label: "Website", url: "https://betterfetch.vercel.app" },
+      ],
+    }, 
     {
       name: "Miniedit",
       description:
@@ -34,15 +54,6 @@
         { label: "GitHub", url: "https://github.com/davidbalishyan/miniedit" },
       ],
     },
-    {
-      name: "Betterfetch",
-      description:
-        "A ligthweight and fast way to fetch and display information about your system.",
-      links: [
-        { label: "GitHub", url: "https://github.com/betterfetch/betterfetch" },
-      ],
-    },
-
   ];
 
   let currentPage = $state(0);
