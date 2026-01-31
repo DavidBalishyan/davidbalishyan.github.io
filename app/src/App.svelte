@@ -5,10 +5,8 @@
   let isHome = $state(true);
 
   onMount(() => {
-    // Basic routing logic
     const path = window.location.pathname;
 
-    // Check if we're at the root or index.html
     const isRoot =
       path === "/" ||
       path === "/index.html" ||
@@ -24,8 +22,7 @@
       }
 
       isHome = false;
-      const target = segments[0]; // Assuming [[something]] is the first segment
-      // Redirect
+      const target = segments[0];
       window.location.href = `https://github.com/DavidBalishyan/${target}`;
     }
   });
